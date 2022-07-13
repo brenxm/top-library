@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+  color: white;
+}
+
+body::before {
+  background-image: url(/1600px_COLOURBOX48083452.jpg);
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-size: 450px;
+  background-repeat: repeat;
+  z-index: -1;
+  filter: brightness(60%);
+}
+
+main .book-text-title {
+  background-color: rgb(63, 35, 35);
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+  width: 280px;
+  padding: 10px 0;
+  margin: 20px auto;
+  margin-bottom: 20px;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+main .books-container {
+  overflow: auto;
+}
+main .books-container {
+  background-color: transparent;
+  height: 380px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+main .books-container * {
+  display: flex;
+  height: 60px;
+  width: 500px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-radius: 20px;
+  gap: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 5px 5px 5px rgba(14, 14, 14, 0.8);
+}
+main .books-container * #text-container {
+  padding: 0;
+  height: 60px;
+  width: auto;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+main .books-container * #text-container p {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  color: white;
+  border: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+main .books-container * #but-container {
+  padding: 0;
+  height: 60px;
+  width: auto;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+main .books-container * #but-container .book-status {
+  background-color: rgb(194, 148, 21);
+  padding: 2px 12px;
+  height: auto;
+  width: auto;
+  margin: 0;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: none;
+}
+main .books-container * #but-container .delete {
+  height: 40px;
+  width: 40px;
+  background-color: rgb(121, 34, 27);
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.new-but-container {
+  z-index: 0;
+}
+
+.new-but-container * {
+  display: block;
+  height: 60px;
+  width: 230px;
+  font-size: 20px;
+  background-color: dodgerblue;
+  border-radius: 20px;
+  font-size: 17px;
+  font-weight: 900;
+  color: rgb(223, 223, 223);
+  border: none;
+  box-shadow: 3px 4px 4px rgba(19, 19, 19, 0.7);
+}
+
+.new-but-container button:hover {
+  filter: brightness(90%);
+}
+
+.new-but-container button:active {
+  filter: brightness(70%);
+}
+
+.book1::before {
+  content: "";
+  background: linear-gradient(-90deg, rgb(136, 5, 197), rgb(61, 0, 56));
+  opacity: 0.3;
+  width: 540px;
+  right: 0;
+  height: 60px;
+  position: absolute;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.template-container {
+  display: none;
+  position: absolute;
+  width: 300px;
+  height: 280px;
+  top: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.253), rgba(4, 12, 41, 0.5));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+  animation-name: form-pop-up;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.template-container * {
+  margin: 12px 0;
+}
+
+.template-container div {
+  display: flex;
+  gap: 13px;
+}
+
+.template-container input {
+  flex: 1;
+  border: none;
+  border-radius: 5px;
+}
+
+div .form-title {
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  width: auto;
+  color: white;
+}
+
+.template-container input:focus {
+  outline: none;
+}
+
+.form-button-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-button-container button {
+  width: auto;
+  height: auto;
+  padding: 10px 25px;
+  margin: 0;
+  border: none;
+  border-radius: 4.5px;
+  color: white;
+  box-shadow: 0 0 6px rgb(0, 0, 0);
+}
+
+.accept-button {
+  background-color: dodgerblue;
+}
+
+.cancel-button {
+  background-color: rgb(250, 41, 41);
+}
+
+.form-button-container button:hover {
+  filter: brightness(90%);
+}
+
+.form-button-container button:active {
+  filter: brightness(70%);
+}
+
+@keyframes form-pop-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

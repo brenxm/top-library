@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="./styles.css">
+        <title>book-shelf</title>
+    </head>
+    <body>
+        <main>
+            <div class="book-text-title">
+                BOOK AVAILABLE
+            </div>
+            <div class="books-container">
+            </div>
+        </main>
+        <div class="new-but-container">
+            <button class="new-but">NEW BOOK</button>
+        </div>
+        <div class="template-container">
+            <form>
+                <div class="form-title">New book info</div>
+                <div>
+                    <label for="title">TITLE:</label>
+                    <input name="title" placeholder="The hobbit" required>
+                </div>
+                <div>
+                    <label for="author">AUTHOR:</label>
+                    <input name="author" placeholder="Tolkien"required>
+                </div>
+                <div>
+                    <label for="pages">PAGES:</label>
+                    <input name="pages" placeholder="290" required pattern="\d+">
+                </div>
+                <div class="form-button-container">
+                   <button class="accept-button">Accept</button>
+                   <button class="cancel-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <script src="./script.js" type="module"></script>
+    </body>
+</html>

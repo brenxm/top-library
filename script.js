@@ -51,14 +51,24 @@ function deleteBook(book){
     book.remove();
 }
 
-function toggleRead(e, book){
-    //updating read bool from shelf arrray
+function readIndicator(e, book){
     const bookElem = shelf.find(x => x.uid == book.getAttribute('data-uid'));
     const index = shelf.indexOf(bookElem);
     let read = shelf[index].read;
 
-    read ? shelf[index].read = false : shelf[index].read = true;
-    console.log(shelf[index].read);
+    read ? toggleRead() : toggleUnread();
+
+    function toggleRead(){
+        shelf[index].read = false;
+        e.target.setAttribute('style', 'background-color: #FF5733; width: 68px;');
+        e.target.textContent = 'unread';
+    }
+
+    function toggleUnread(){
+        e.target.setAttribute('style', 'background-color: #A2FF33; width: 49px;');
+        shelf[index].read = true;
+        e.target.textContent = 'read';
+    }
 }
 
 
@@ -97,11 +107,12 @@ function createBookElement(bookObj){
                 but.setAttribute('class','book-status');
                 but.textContent = 'unread';
                 but.addEventListener('click', (e) => { // make button active to user
-                    toggleRead(e, container);
+                    readIndicator(e, container);
                 });
                 break;
             case 1 :
                 but.setAttribute('class', 'delete');
+                but.textContent = "X";
                 but.addEventListener('click', () => { // make button active to user
                     deleteBook(container); 
                 });

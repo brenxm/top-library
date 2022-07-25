@@ -12,9 +12,9 @@ acceptBut.addEventListener('click', acceptUiForm);
 form.addEventListener('submit', acceptForm);
 
 function acceptForm(e){
-    const newBook = new BookTemplate(e.target.title.value, e.target.author.value, e.target.pages.value, false);
-    createBookElement(newBook);
-    shelf.push(newBook);
+    const newBook = new Book(e.target.title.value, e.target.author.value, e.target.pages.value, false);
+    generateHtmlElement(newBook);
+    Library.books.push(newBook); // fix this not working
     e.preventDefault();
     cancelUiForm(e);
 }
@@ -32,14 +32,6 @@ function cancelUiForm(e) {
     formTemplate.setAttribute('style', 'display: none');
     e.stopPropagation();
     e.preventDefault();
-}
-
-function BookTemplate(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.uid = generateId();
 }
 
 function deleteBook(book){
@@ -71,8 +63,7 @@ function readIndicator(e, book){
     }
 }
 
-
-function createBookElement(bookObj){
+function generateHtmlElement(bookObj){
     const container = document.createElement('div');
     const textContainer = document.createElement('div');
     const butContainer = document.createElement('div');
@@ -123,7 +114,6 @@ function createBookElement(bookObj){
 
     container.appendChild(textContainer);
     container.appendChild(butContainer);
-    
     const booksContainer = document.querySelector('.books-container');
     booksContainer.appendChild(container);
 }
@@ -136,4 +126,28 @@ function generateId (){
 
    return generateId();
 }
+
+class Book{
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.id = generateId();
+    }
+
+    toggleRead(){
+        this.read ? this.read = false : this.read = true;
+    }
+
+    generateId(){
+        return Math.floor(Math.random() * 20);
+    }
+}
+
+class Library{
+    books = [];
+
+}
+
 

@@ -105,31 +105,43 @@ main {
                 box-shadow: none;
 
                 .book-status {
-                        background-color: rgb(194, 148, 21);
-                        padding: 2px 12px;
-                        height: auto;
-                        width: 65px;
-                        text-align: center;
-                        margin: 0;
-                        border-radius: 10px;
-                        text-align: center;
-                        box-shadow: none;
-                        border: none;
-                        transition: 0.5s;
+                    background-color: rgb(194, 148, 21);
+                    padding: 2px 12px;
+                    height: auto;
+                    width: 65px;
+                    text-align: center;
+                    margin: 0;
+                    border-radius: 10px;
+                    text-align: center;
+                    box-shadow: none;
+                    border: none;
+                    transition: 0.5s;
                     }
+
+                #book-status--read {
+                    @extend .book-status;
+                    background-color: #A2FF33;
+                    width: 49px;
+                }
+
+                #book-status--unread {
+                    @extend .book-status;
+                    background-color: #FF5733; 
+                    width: 68px;
+                }
                 
-                    .delete {
-                        height: auto;
-                        width: auto;
-                        background-color: rgb(236, 63, 51);
-                        margin: 0;
-                        border-radius: 5px;
-                        border: none;
-                        box-shadow: none;
-                        padding: 5px 7px;
-                        color: white;
-                        font-size: 10px;
-                    }
+                .delete {
+                    height: auto;
+                    width: auto;
+                    background-color: rgb(236, 63, 51);
+                    margin: 0;
+                    border-radius: 5px;
+                    border: none;
+                    box-shadow: none;
+                    padding: 5px 7px;
+                    color: white;
+                    font-size: 10px;
+                }
             }
         }
     }

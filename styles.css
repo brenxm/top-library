@@ -92,7 +92,7 @@ main .books-container * #but-container {
   backdrop-filter: none;
   box-shadow: none;
 }
-main .books-container * #but-container .book-status {
+main .books-container * #but-container .book-status, main .books-container * #but-container #book-status--unread, main .books-container * #but-container #book-status--read {
   background-color: rgb(194, 148, 21);
   padding: 2px 12px;
   height: auto;
@@ -104,6 +104,14 @@ main .books-container * #but-container .book-status {
   box-shadow: none;
   border: none;
   transition: 0.5s;
+}
+main .books-container * #but-container #book-status--read {
+  background-color: #A2FF33;
+  width: 49px;
+}
+main .books-container * #but-container #book-status--unread {
+  background-color: #FF5733;
+  width: 68px;
 }
 main .books-container * #but-container .delete {
   height: auto;
